@@ -9,7 +9,7 @@ interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 	return (
 		<div
-			className={`flex gap-5 p-4 bg-sky-200/50 items-center ${
+			className={`flex gap-5 p-4 bg-sky-200/50 items-top ${
 				message.role === "assistant" ? "bg-sky-500/50" : ""
 			}`}
 		>

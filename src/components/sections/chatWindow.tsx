@@ -3,14 +3,14 @@ import ChatMessage from "./chatMessage";
 import ChatBar from "./chatBar";
 import { useChat } from "ai/react";
 import type { FormEvent } from "react";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface ChatWindowProps {
 	endpoint: string;
 }
 
 const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
-	const messageContainerRef = useRef(null);
+	const messageContainerRef = useRef<HTMLDivElement>(null);
 
 	const [sourcesForMessages, setSourcesForMessages] = useState({});
 
@@ -41,6 +41,13 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 		},
 	});
 
+	useEffect(() => {
+		if (messageContainerRef.current) {
+			const scrollHeight = messageContainerRef.current.scrollHeight;
+			messageContainerRef.current.scrollTop = scrollHeight;
+		}
+	}, [messages]);
+
 	async function sendMessage(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		if (isLoading) {
@@ -53,7 +60,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 
 	return (
 		<>
-			<div className="flex flex-col gap-2 border-slate-300 border-2 rounded-md h-5/6 mx-5 p-4">
+			<div
+				ref={messageContainerRef}
+				className="flex flex-col gap-2 border-slate-300 border-2 rounded-md h-5/6 mx-5 p-4 overflow-auto"
+			>
 				{messages.length > 0
 					? [...messages].map((m, i) => {
 							const sourceKey = (

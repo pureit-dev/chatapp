@@ -28,7 +28,9 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Header />
-					{children}
+					<ChatWindow />
+					<ChatBar />
+					{/* {children} */}
 				</ThemeProvider>
 			</body>
 		</html>

@@ -1,5 +1,9 @@
-import Image from "next/image";
+import ChatWindow from "@/components/sections/chatWindow";
 
 export default function Home() {
-	return <main></main>;
+	return (
+		<>
+			<ChatWindow endpoint="/api/chat/agent" />
+		</>
+	);
 }

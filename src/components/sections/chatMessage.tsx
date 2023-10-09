@@ -1,23 +1,24 @@
 import React from "react";
+import type { Message } from "ai/react";
 
 interface ChatMessageProps {
-	message: {
-		text: string;
-		role: string;
-	};
+	message: Message;
+	sources: any[];
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
+const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 	return (
 		<div
 			className={`flex gap-5 p-4 bg-sky-200/50 items-center ${
-				message.role === "system" ? "bg-sky-500/50" : ""
+				message.role === "assistant" ? "bg-sky-500/50" : ""
 			}`}
 		>
 			<div>
-				<p className="border-2 px-3 py-1 rounded-full border-slate-300">{message.role.slice(0, 1).toUpperCase()}</p>
+				<p className="border-2 px-3 py-1 rounded-full border-slate-300">
+					{message.role.slice(0, 1).toUpperCase()}
+				</p>
 			</div>
-			<p>{message.text}</p>
+			<p>{message.content}</p>
 		</div>
 	);
 };

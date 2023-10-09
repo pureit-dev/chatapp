@@ -11,10 +11,10 @@ const ChatWindow: React.FC = () => {
 			text: "Welcome to the chat app!  How can I assist you today?",
 			role: "system",
 		},
-		{ text: "I am good thanks", role: "human" },
+		{ text: "I need assistance with writing a poem", role: "human" },
 	];
 	return (
-		<div className="border-slate-300 border-2 rounded-md h-5/6 mx-5 p-4">
+		<div className="flex flex-col gap-2 border-slate-300 border-2 rounded-md h-5/6 mx-5 p-4">
 			{messages.map((message, index) => (
 				<ChatMessage key={index} message={message} />
 			))}

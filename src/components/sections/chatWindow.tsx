@@ -1,7 +1,7 @@
 "use client";
 import ChatMessage from "./chatMessage";
 import ChatBar from "./chatBar";
-import { useChat } from "ai/react";
+import { useChat, Message } from "ai/react";
 import type { FormEvent } from "react";
 import React, { useRef, useState, useEffect } from "react";
 
@@ -13,6 +13,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 	const messageContainerRef = useRef<HTMLDivElement>(null);
 
 	const [sourcesForMessages, setSourcesForMessages] = useState({});
+	const initialMessage: Message[] = [{content: "Hello, I'm Bob Bot!  How can I help you?", role: "assistant", id: "0"}]
 
 	const {
 		messages,
@@ -36,6 +37,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 				});
 			}
 		},
+		initialMessages: initialMessage,
 		onError: (e) => {
 			console.error(e);
 		},

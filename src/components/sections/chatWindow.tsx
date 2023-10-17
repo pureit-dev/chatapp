@@ -13,8 +13,15 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 	const messageContainerRef = useRef<HTMLDivElement>(null);
 
 	const [sourcesForMessages, setSourcesForMessages] = useState({});
-	const initialMessage: Message[] = [{content: "Hello, I'm Bob Bot!  How can I help you?", role: "assistant", id: "0"}]
+	const initialMessage: Message[] = [
+		{
+			content: "Hello, I'm Bob Bot!  How can I help you?",
+			role: "assistant",
+			id: "0",
+		},
+	];
 
+	
 	const {
 		messages,
 		input,

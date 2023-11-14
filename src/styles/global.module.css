@@ -1,0 +1,42 @@
+ .react_markdown_box {
+    height: 100%;
+    overflow-y: auto;
+    white-space: break-spaces;
+    margin-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    table {
+        width: 100%;
+
+        td,
+        th {
+            border: 1px solid var(--chakra-colors-chakra-border-color);
+            text-align: center;
+        }
+    }
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+            monospace;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    ul, ol {
+        list-style-position: inside;
+        display:table-row;
+    }
+
+    li {
+        padding-left: 1em;
+        white-space: normal;
+    }
+
+    li > p {
+        display:inline;
+    }
+
+}

@@ -1,5 +1,3 @@
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import { Loader, SendHorizontal } from "lucide-react";
 import type { ChangeEvent, FormEvent } from "react";
 
@@ -20,7 +18,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 		<div className="flex justify-center my-5 ">
 			<form onSubmit={handleSubmit}>
 				<div className="flex flex-row w-screen max-w-screen-lg px-5 space-x-3">
-					<Input
+					<input
 						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-md"
 						type="text"
 						placeholder="Type a message..."
@@ -28,7 +26,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 						onChange={handleInputChange}
 						autoFocus
 					/>
-					<Button type="submit">
+					<button type="submit" className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 						{isLoading ? (
 							<svg
 								className="animate-spin h-5 w-6"
@@ -39,7 +37,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 						) : (
 							<SendHorizontal />
 						)}
-					</Button>
+					</button>
 				</div>
 			</form>
 		</div>

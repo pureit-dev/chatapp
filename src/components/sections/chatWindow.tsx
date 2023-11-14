@@ -21,7 +21,6 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ endpoint }) => {
 		},
 	];
 
-	
 	const {
 		messages,
 		input,

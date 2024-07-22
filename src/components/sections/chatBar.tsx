@@ -15,8 +15,8 @@ const ChatBar: React.FC<ChatBarProps> = ({
 	isLoading,
 }) => {
 	return (
-		<div className="flex justify-center my-5 ">
-			<form onSubmit={handleSubmit}>
+		<div className="flex justify-center my-5 w-full"> // Adjusted to extend full width
+			<form onSubmit={handleSubmit} className="w-full"> // Added class to extend form full width
 				<div className="flex flex-row w-full px-5 space-x-3"> 
 					<input
 						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-md flex-grow"

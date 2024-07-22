@@ -5,7 +5,7 @@ interface ChatBarProps {
 	input: string;
 	isLoading: boolean;
 	handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
-	handleSubmit: (e: FormDateEvent<HTMLFormElement>) => void;
+	handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const ChatBar: React.FC<ChatBarProps> = ({
@@ -17,7 +17,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 	return (
 		<div className="flex justify-center my-5 ">
 			<form onSubmit={handleSubmit}>
-				<div className="flex flex-row w-full px-5 space-x-3"> <!-- Updated this line -->
+				<div className="flex flex-row w-full px-5 space-x-3"> 
 					<input
 						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-md flex-grow"
 						type="text"

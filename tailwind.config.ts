@@ -15,7 +15,13 @@ module.exports = {
 				"2xl": "1400px",
 			},
 		},
-		extend: {},
+		extend: {
+			// Adding custom styles for consistency across ChatBar and ChatWindow
+            width: {
+                'chat-bar': 'calc(100% - 2rem)',
+            },
+		},
 	},
 	plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
 };
+

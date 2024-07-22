@@ -4,28 +4,23 @@ module.exports = {
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
-		"./app/**/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
 	theme: {
 		container: {
 			center: true,
-			padding: {
-				DEFAULT: '2rem', // Consistent padding for the sake of responsiveness
-				sm: '2rem',
-				md: '2rem',
-				lg: '2rem',
-				xl: '2rem',
-				'2xl': '2rem',
-			},
+			padding: "2rem",
 			screens: {
 				"2xl": "1400px",
 			},
 		},
 		extend: {
-			maxWidth: {
-				'chatbar': 'none', // Allowing the chatbar component to extend fully
-			}
+			// Adjusting custom styles for the ChatBar to extend full width of the ChatWindow
+            width: {
+                'chat-bar': 'calc(100% - 2rem)', // Ensuring ChatBar extends full width
+                'chat-window': '100%' // Defining full width for the ChatWindow for consistency
+            },
 		},
 	},
 	plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],

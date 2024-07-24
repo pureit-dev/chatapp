@@ -17,21 +17,21 @@ interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 	return (
 		<div
-			className={`flex gap-5 p-4 bg-sky-200/50 items-top ${
+			className={`flex gap-5 p-4 bg-sky-200/50 items-top rounded-lg ${
 				message.role === "assistant" ? "bg-sky-500/50" : ""
 			}`}
 		>
 			<div>
 				{message.role === "assistant" ? (
 					<Image
-						className="border-2 border-slate-500"
+						className="border-2 border-slate-500 rounded-full"
 						src={Bob}
 						alt="Avatar of BobBot"
 						width={40}
 						height={40}
 					/>
 				) : (
-					<p className="border-2 p-3 border-slate-500">
+					<p className="border-2 p-3 border-slate-500 rounded-full">
 						{message.role.slice(0, 1).toUpperCase()}
 					</p>
 				)}
@@ -46,20 +46,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 						return <p className="mb-2 last:mb-0">{children}</p>;
 					},
 					code({ node, inline, className, children, ...props }) {
-					// 	if (children.length) {
-					// 		if (children[0] == "▍") {
-					// 			return (
-					// 				<span className="mt-1 cursor-default animate-pulse">
-					// 					▍
-					// 				</span>
-					// 			);
-					// 		}
 
-					// 		children[0] = (children[0] as string).replace(
-					// 			"`▍`",
-					// 			"▍"
-					// 		);
-						// }
 
 						const match = /language-(\w+)/.exec(className || "");
 
@@ -90,3 +77,4 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 };
 
 export default ChatMessage;
+

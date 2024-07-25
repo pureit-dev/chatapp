@@ -19,7 +19,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 		<div
 			className={`flex gap-5 p-4 bg-sky-200/50 items-top rounded-lg ${
 				message.role === "assistant" ? "bg-sky-500/50" : ""
-			}`}
+			} rounded-md`} // Added `rounded-md` for rounded edges
 		>
 			<div>
 				{message.role === "assistant" ? (
@@ -77,4 +77,5 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, sources }) => {
 };
 
 export default ChatMessage;
+
 

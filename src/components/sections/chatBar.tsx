@@ -15,9 +15,9 @@ const ChatBar: React.FC<ChatBarProps> = ({
 	isLoading,
 }) => {
 	return (
-		<div className="flex justify-center my-5 w-full"> // Adjusted to extend full width
-			<form onSubmit={handleSubmit} className="w-full"> // Added class to extend form full width
-				<div className="flex flex-row w-full px-5 space-x-3"> 
+		<div className="flex justify-center my-5 w-full">
+			<form onSubmit={handleSubmit} className="w-full">
+				<div className="flex flex-row w-full px-5 space-x-3">
 					<input
 						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-md flex-grow"
 						type="text"
@@ -26,7 +26,10 @@ const ChatBar: React.FC<ChatBarProps> = ({
 						onChange={handleInputChange}
 						autoFocus
 					/>
-					<button type="submit" className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+					<button
+						type="submit"
+						className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+					>
 						{isLoading ? (
 							<svg
 								className="animate-spin h-5 w-6"
@@ -45,4 +48,3 @@ const ChatBar: React.FC<ChatBarProps> = ({
 };
 
 export default ChatBar;
-

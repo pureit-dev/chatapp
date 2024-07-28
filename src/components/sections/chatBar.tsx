@@ -19,7 +19,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 			<form onSubmit={handleSubmit} className="w-full">
 				<div className="flex flex-row w-full px-5 space-x-3">
 					<input
-						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-md flex-grow"
+						className="shadow-md focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 border-slate-300 border-2 rounded-noir flex-grow bg-noir-bg text-noir-text border-noir-border"
 						type="text"
 						placeholder="Type a message..."
 						value={input}
@@ -28,7 +28,7 @@ const ChatBar: React.FC<ChatBarProps> = ({
 					/>
 					<button
 						type="submit"
-						className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+						className="rounded-noir bg-noir-accent px-2 py-1 text-xs font-semibold text-noir-text shadow-sm hover:bg-opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-noir-accent"
 					>
 						{isLoading ? (
 							<svg
@@ -48,3 +48,4 @@ const ChatBar: React.FC<ChatBarProps> = ({
 };
 
 export default ChatBar;
+

@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="box-border flex flex-col h-screen max-w-screen-lg justify-between my-0 mx-auto">
+			<body className="box-border flex flex-col h-screen max-w-screen-lg justify-between my-0 mx-auto bg-noir-bg text-noir-text">
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
@@ -32,3 +32,4 @@ export default function RootLayout({
 		</html>
 	);
 }
+

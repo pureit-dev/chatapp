@@ -5,13 +5,13 @@ module.exports = {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	theme: {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: '2rem', // Consistent padding for the sake of responsiveness
+				DEFAULT: '2rem',
 				sm: '2rem',
 				md: '2rem',
 				lg: '2rem',
@@ -23,8 +23,17 @@ module.exports = {
 			},
 		},
 		extend: {
+			colors: {
+				'noir-bg': '#121212', // Adding noir theme background color
+				'noir-text': '#E3E3E3', // Adding noir theme text color
+				'noir-accent': '#B1A7A6', // Adding an accent color for noir theme
+				'noir-border': '#333333', // Border color for inputs and buttons in noir theme
+			},
+			borderRadius: {
+				'noir': '0.25rem', // Applying subtle borderRadius for the noir theme
+			},
 			maxWidth: {
-				'chatbar': 'none', // Allowing the chatbar component to extend fully
+				'chatbar': 'none',
 			}
 		},
 	},
